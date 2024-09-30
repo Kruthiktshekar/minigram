@@ -1,0 +1,546 @@
+.post {
+  width: 500px;
+  border: 1px solid #dbdbdb;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: Arial, sans-serif;  
+  padding: 20px;
+  margin-top: 5px;
+
+  /* overflow-y: scroll;    */
+}
+
+.profile{
+  width: 700px;
+  margin: 20px auto;
+  border: 1px solid #dbdbdb;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  margin-left: 220px;  
+  padding: 20px;
+  height: 100vh;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-info {
+  flex-grow: 1;
+}
+
+.username {
+  font-weight: bold;
+  display: block;
+}
+
+.location {
+  font-size: 12px;
+  color: #888;
+}
+
+.more-options {
+  border: none;
+  font-size: 18px;
+}
+
+
+.post-media {
+  width: 100%;
+  max-height: 600px;
+  overflow: hidden;
+}
+
+.post-img {
+  width: 100%;
+  display: block;
+}
+
+.post-actions {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.post-actions button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.post-likes, .post-caption, .post-comments, .post-time {
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+
+.post-caption b, .post-comments b {
+  font-weight: bold;
+}
+
+.add-comment {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #dbdbdb;
+  padding: 10px;
+}
+
+.add-comment input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+}
+
+.add-comment button {
+  background: none;
+  border: none;
+  color: #3897f0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-picture img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.profile-details {
+  flex-grow: 1;
+}
+
+.profile-stats {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.profile-bio {
+  margin-top: 10px;
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.post-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.sidebar{
+  position: fixed;   
+  width: 200px;      
+  height: 100vh;     
+  background-color: #343a40;
+  color: white;
+  padding-top: 15px;
+  overflow: hidden;
+  border-right: 1px solid #dbdbdb;
+  transition: background-color 0.3s ease;
+  
+}
+
+
+.sidebarList .nav-link:hover {
+  background-color: #213346;
+  color: #ccc; 
+  cursor:pointer;
+}
+.sidebarList .nav-link:active{
+  background-color: #a9b9c6; 
+}
+
+.custom-link{
+  text-decoration: none;
+  color: inherit;
+  display: block;
+
+}
+
+#sidebar {
+  width: 200px;
+  background-color: #343a40;
+  color: white;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+#sidebar h4 {
+  color: white;
+}
+
+#sidebar .nav-link {
+  color: #ccc;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+}
+
+#sidebar .nav-link:hover {
+  background-color: #495057;
+  color: white;
+}
+#logout{
+  margin-bottom: 10px;
+}
+
+#content {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #f8f9fa;
+}
+
+.chatlist-container{
+    border-right: 1px solid white;
+    height: 100vh;
+    width: 40%;
+    margin-right: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+.chatlist:hover{
+  background-color: #c7cfda;
+}
+.chatlist:active{
+  background-color: #80b6eb;
+}
+.chatlist-container h2{
+  color: #ccc;
+}
+
+
+.chatarea{
+    height:100vh;
+    width: 70%;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+/* Chat container */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  border: 1px solid #dbdbdb;
+  border-radius: 10px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid #dbdbdb;
+  background-color: #fafafa;
+}
+
+.chat-header h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+}
+
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: #fafafa;
+}
+
+.message {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.message.sent {
+  justify-content: flex-end;
+}
+
+.message.received {
+  justify-content: flex-start;
+}
+
+.message .content {
+  max-width: 70%;
+  padding: 10px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.message.sent .content {
+  background-color: #007bff;
+  color: white;
+  border-top-right-radius: 0;
+}
+
+.message.received .content {
+  background-color: #e4e6eb;
+  color: black;
+  border-top-left-radius: 0;
+}
+
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #dbdbdb;
+  background-color: #fafafa;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: #e4e6eb;
+  outline: none;
+  font-size: 14px;
+}
+
+.chat-input button {
+  margin-left: 10px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 20px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.main-layout {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebars {
+  width: 20%;  /* Adjust width to your preference */
+  background-color: #f4f4f4;
+  padding: 15px;
+}
+
+.main-content {
+  flex-grow: 1;
+  width: 50%;  /* Adjust the width of the main content (less than full screen) */
+  padding: 20px;
+  background-color: #2a2a2d;
+  overflow: scroll;
+  border-left: 1px solid #ddd;  /* Optional border to separate sidebar */
+}
+
+
+/* Edit Profile */
+
+/* Container for the entire edit profile form */
+.edit-profile-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+
+/* Header */
+.edit-profile-header h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+/* Profile Picture Section */
+.edit-profile-picture {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.edit-profile-picture img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.upload-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.upload-button:hover {
+  background-color: #0056b3;
+}
+
+/* Form Styling */
+.edit-profile-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.edit-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-form-group label {
+  margin-bottom: 8px;
+  color: #555555;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.edit-form-group input,
+.edit-form-group textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+  transition: border-color 0.3s;
+}
+
+.edit-form-group input:focus,
+.edit-form-group textarea:focus {
+  border-color: #007bff;
+}
+
+.edit-form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Form Buttons */
+.edit-form-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.save-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.save-button:hover {
+  background-color: #218838;
+}
+
+.cancel-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.cancel-button:hover {
+  background-color: #c82333;
+}
+
+/* Modal.css */
+.modal-overlay {
+  position:fixed;
+  top: 0;
+  margin-top: 150px;
+  margin-left: 90px;
+  width: 50vw;
+  height: 40vh;
+  border-radius: 20px;
+  background: rgba(7, 29, 31, 0.942);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.delete-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cancel-button {
+  background-color: gray;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-button:hover, .cancel-button:hover {
+  opacity: 0.8;
+}
