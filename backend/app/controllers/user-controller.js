@@ -34,8 +34,10 @@ const createUser = async (req, res) => {
 // to verify otp
 const verifyUser = async (req, res) => {
   const data = req.body;
+  console.log(data)
   try {
     const user = await User.findOne({ email: data.email });
+    console.log(user)
     if (!user) {
       return res.status(404).json({ msg: "user not found" });
     }

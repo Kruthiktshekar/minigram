@@ -10,7 +10,8 @@ export const VerifyEmail = () => {
   const navigate = useNavigate();
   const [otp, setOtp] = useState("");
 
-  const otpHandler = async () => {
+  const otpHandler = async (e) => {
+    e.preventDefault()
     const formData = {
       email,
       otp,
@@ -22,14 +23,14 @@ export const VerifyEmail = () => {
       );
       if (response) {
         toast.success('email verified successfully')
-        localStorage.setItem("token", response.data.token);
+        // localStorage.setItem("token", response.data.token);
         setOtp("");
         alert("email has verified, You can login now..");
         navigate("/login");
       }
     } catch (error) {
       console.log(error);
-      toast.error(error.response.data.msg)
+     // toast.error(error.response.data.msg)
       setOtp("");
       navigate('/signup')
     }

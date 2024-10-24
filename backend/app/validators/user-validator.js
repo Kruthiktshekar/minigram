@@ -15,21 +15,21 @@ export const userRegisterSchema = {
         },
         trim : true,
         normalizeEmail : true,
-        custom : {
-            options : async function(value){
-                try{
-                    const user = await User.findOne({email:value})
-                    if(user){
-                        throw new Error('Email is already exists')
-                    }
+        // custom : {
+        //     options : async function(value){
+        //         try{
+        //             const user = await User.findOne({email:value})
+        //             if(user){
+        //                 throw new Error('Email is already exists')
+        //             }
+        //             return true
 
-                }
-                catch(error){
-                    throw new Error(error.message)
-                }
-                return true
-            }
-        }
+        //         }
+        //         catch(error){
+        //             throw new Error(error.message)
+        //         }
+        //     }
+        // }
 
     },
     password : {
@@ -76,11 +76,12 @@ export const userRegisterSchema = {
                 if(userName){
                     throw new Error('user name is already taken')
                 }
+                return true
                 }
                 catch(error) {
                     throw new Error(error.message)
                 }
-                return true
+               
             }
         } 
     }
