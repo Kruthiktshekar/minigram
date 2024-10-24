@@ -1,4 +1,4 @@
-import dotenv from 'dotenv'
+"import dotenv from 'dotenv'
 import express from 'express'
 import { ConfigDb } from './config/db.js'
 import { route } from './config/routes.js'
@@ -16,12 +16,11 @@ dotenv.config()
 
 const app = express()
 const port = 3030
-app.use(cors(
-    {
-        origin: 'https://your-vercel-frontend-domain.vercel.app',
-        credentials: true
-    }
-))
+app.use(cors({
+  origin: 'https://mini-blog-app-pi.vercel.app', 
+  methods: 'GET,POST,PUT,DELETE',
+  credentials: true 
+}))
 app.use(express.json())
 app.use(route)
 app.use('/upload', express.static(path.join(__dirname, 'upload')));
