@@ -1,4 +1,4 @@
-"import dotenv from 'dotenv'
+import dotenv from 'dotenv'
 import express from 'express'
 import { ConfigDb } from './config/db.js'
 import { route } from './config/routes.js'
