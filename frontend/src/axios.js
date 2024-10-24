@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export const axiosApi = axios.create({
-    baseURL: 'https://mingram-api.vercel.app/api'
+    baseURL: 'https://minigram-api.onrender.com/api'
   });
 
