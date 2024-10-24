@@ -17,8 +17,8 @@ dotenv.config()
 const app = express()
 const port = 3030
 app.use(cors({
-  origin: 'minigram-kruthiktshekars-projects.vercel.app', 
-  methods: 'GET,POST,PUT,DELETE',
+  origin: 'https://minigram-kruthiktshekars-projects.vercel.app', 
+  methods: ['GET,POST,PUT,DELETE']
   credentials: true 
 }))
 app.use(express.json())
