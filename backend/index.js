@@ -18,7 +18,7 @@ const app = express()
 const port = 3030
 app.use(cors(
     {
-        origin: ["https://mini-blog-app-pi.vercel.app"],
+        origin: ["https://mini-blog-app-git-main-kruthiktshekars-projects.vercel.app"],
         methods : ["GET" , "POST" , "PUT", "DELETE"],
         credentials: true
     }
