@@ -16,7 +16,12 @@ dotenv.config()
 
 const app = express()
 const port = 3030
-app.use(cors())
+app.use(cors(
+    {
+        origin: 'https://your-vercel-frontend-domain.vercel.app',
+        credentials: true
+    }
+))
 app.use(express.json())
 app.use(route)
 app.use('/upload', express.static(path.join(__dirname, 'upload')));
