@@ -74,6 +74,7 @@ function Registration() {
           console.log("registration failed", response);
         }
       }  catch (error) {
+        console.log(error)
         if (error.response) {
           console.error('Server Error Response:', error.response.data);
           toast.error(error.response.data.msg)
