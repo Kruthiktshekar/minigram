@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { axiosApi } from "../../axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { host } from "../../host";
 
 function ChatList({ setCurrentChat }) {
   const [contacts, setContacts] = useState([]);
@@ -45,7 +46,7 @@ function ChatList({ setCurrentChat }) {
                   <img
                     src={
                       users.profilePic
-                        ? `http://localhost:3030/${users.profilePic}`
+                        ? `${host}/${users.profilePic}`
                         : "/Assests/default-profile.jpg"
                     }
                     alt={`${users.username}'s profile`}

@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import ContentLoader from "react-content-loader";
 import { axiosApi } from "../axios";
+import { host } from "../host";
 
 function Profile() {
   const { loginUser } = useContext(AuthContext);
@@ -100,7 +101,7 @@ function Profile() {
       <div className="">
           <div className="profile-header">
             <div className="profile-picture">
-              <img src={user.profilePic ?  `http://localhost:3030/${user.profilePic}` : "/Assests/default-profile.jpg"} alt={`${user.username}'s profile`} />
+              <img src={user.profilePic ?  `${host}/${user.profilePic}` : "/Assests/default-profile.jpg"} alt={`${user.username}'s profile`} />
             </div>
             <div className="profile-details">
               <h2>{user.username}</h2>
@@ -134,7 +135,7 @@ function Profile() {
             { posts.length > 0 ? (posts.map((post) => (
               <div key={post._id} className="post-item" >
                 <img
-                  src={`http://localhost:3030/${post.mediaUrl}`}
+                  src={`${host}/${post.mediaUrl}`}
                   alt={post.caption}
                   onClick={()=>{deleteFunction(post._id)}}
                 />

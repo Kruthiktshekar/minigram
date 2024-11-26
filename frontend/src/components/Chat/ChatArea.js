@@ -5,6 +5,7 @@ import { AuthContext } from "../../contexts/Auth";
 import { axiosApi } from "../../axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { host } from "../../host";
 
 function ChatArea({ currentChat, socket }) {
   const { loginUser } = useContext(AuthContext);
@@ -91,7 +92,7 @@ function ChatArea({ currentChat, socket }) {
             <img
                     src={
                         currentChat.profilePic
-                        ? `http://localhost:3030/${currentChat.profilePic}`
+                        ? `${host}/${currentChat.profilePic}`
                         : "/Assests/default-profile.jpg"
                     }
                     alt={`${currentChat.username}'s profile`}

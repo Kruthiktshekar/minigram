@@ -3,11 +3,13 @@ import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../../contexts/Auth'
 import {format} from 'date-fns'
 import ContentLoader from "react-content-loader"
+import { axiosApi } from '../../axios'
+import { host } from '../../host'
 
 
 function PostList({post , postDispatch}) {
 
-  const contentUrl = `http://localhost:3030/${post.mediaUrl}`
+  const contentUrl = `${host}/${post.mediaUrl}`
   
   const {loginUser} = useContext(AuthContext)
   const user = loginUser.user
@@ -26,7 +28,7 @@ function PostList({post , postDispatch}) {
   // like handler
   const likeHandler = async(id) => {
     try{
-        const res = await axios.put(`http://localhost:3030/api/like-post/${id}`, {} , {headers : {'Authorization' : localStorage.getItem('token')}})
+        const res = await axiosApi.put(`/like-post/${id}`, {} , {headers : {'Authorization' : localStorage.getItem('token')}})
         const newObg = {...res.data, post_id :  id}
         postDispatch({type : 'UPDATE_LIKE', payload : newObg})
     }
@@ -37,7 +39,7 @@ function PostList({post , postDispatch}) {
  
  // commenet handler
   const addComment = async(id) => {
-     const response = await axios.put(`http://localhost:3030/api/comment-post/${id}`,{text : comment}, {headers : {'Authorization' : localStorage.getItem('token')}})
+     const response = await axiosApi.put(`/comment-post/${id}`,{text : comment}, {headers : {'Authorization' : localStorage.getItem('token')}})
      const data = response.data
     const newObj = {...data ,post_id :id}
      postDispatch({type : 'UPDATE_COMMENT' , payload : newObj})

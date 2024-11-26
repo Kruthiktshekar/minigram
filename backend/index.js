@@ -16,11 +16,7 @@ dotenv.config()
 
 const app = express()
 const port = 3030
-app.use(cors({
-  origin: 'https://minigram-phi.vercel.app', 
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true 
-}))
+app.use(cors())
 app.options('*', cors())
 app.use(express.json())
 app.use(route)

@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../contexts/Auth";
 import ContentLoader from "react-content-loader";
 import { axiosApi } from "../../axios";
+import { host } from "../../host";
 
 function ShowUsers() {
   const { loginUser } = useContext(AuthContext);
@@ -79,7 +80,7 @@ function ShowUsers() {
         className="list-group-item d-flex justify-content-between align-items-start"
       >
           <img
-            src={ ele.profilePic ?  `http://localhost:3030/${ele.profilePic}` : "/Assests/default-profile.jpg"}
+            src={ ele.profilePic ?  `${host}/${ele.profilePic}` : "/Assests/default-profile.jpg"}
             alt={`${ele.username}'s profile`}
             className="rounded-circle"
             style={{

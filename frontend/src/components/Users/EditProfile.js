@@ -4,10 +4,11 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { axiosApi } from "../../axios";
+import { host } from "../../host";
 
 function EditProfile() {
   const { loginUser , dispatch} = useContext(AuthContext);
-  const profileUrl = `http://localhost:3030/${loginUser.user.profilePic}`;
+  const profileUrl = `${host}/${loginUser.user.profilePic}`;
 
   const [profilePic, setProfilePic] = useState(profileUrl);
   const [newPic , setNewPic] = useState('')
