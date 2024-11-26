@@ -15,7 +15,7 @@
     ],
     "headers": [
     {
-      "source": "/api/(.*)", // Adjust the path to your API routes
+      "source": "/api/(.*)", 
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
