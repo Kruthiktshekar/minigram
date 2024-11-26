@@ -17,7 +17,7 @@ dotenv.config()
 const app = express()
 const port = 3030
 app.use(cors({
-  origin: 'https://minigram-bv4z.onrender.com', 
+  origin: 'https://mini-blog-app-psi.vercel.app', 
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true 
 }))
