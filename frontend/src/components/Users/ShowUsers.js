@@ -14,12 +14,20 @@ function ShowUsers() {
 
   useEffect(() => {
     async function getUsers() {
-      const response = await axiosApi.get(`/get-users`, {
-        headers: { Authorization: localStorage.getItem("token") },
-      });
-      const result = response.data;
-      setUsers(result);
-      setSorting(result)
+      try{
+        const response = await axiosApi.get(`/get-users`, {
+          headers: { Authorization: localStorage.getItem("token") },
+        });
+        const result = response.data;
+        console.log(result)
+        setUsers(result);
+        setSorting(result)
+
+      }catch(err){
+        if(err.response.status == 404){
+          setUsers(['No users found'])
+        }
+      }
     }
     getUsers();
   }, []);

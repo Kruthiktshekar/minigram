@@ -41,7 +41,7 @@ function EditProfile() {
     try{
         const response = await axiosApi.put('/user-update', formData , {headers : {'Authorization' : localStorage.getItem('token')}})
         if(response){
-            toast.info('profile updated successfully')
+            toast.info('profile updated successfully', { autoClose: 1000 })
             dispatch({type:'UPDATE_USER', payload:response.data})
             navigate('/dashboard/profile')
             setNewPic('')

@@ -44,7 +44,7 @@ function AddPost() {
       });
       const result = res.data;
       postDispatch({ type: "ADD_POST", payload: result });
-      toast.success("posted successfully");
+      toast.success("posted successfully", { autoClose: 1000 });
       setFile(null);
       setCaption("");
       setPreviewUrl(null)
@@ -52,7 +52,7 @@ function AddPost() {
       
     } catch (err) {
       console.log(err);
-      toast.error("something went wrong..!");
+      toast.error("something went wrong..!", { autoClose: 1000 });
     }
   };
 

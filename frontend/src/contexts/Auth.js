@@ -1,7 +1,6 @@
 import { createContext, useEffect, useReducer } from "react";
 import AuthReducer from "../reducers/Auth-Reducer";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { axiosApi } from "../axios";
 import { toast } from "react-toastify";
 

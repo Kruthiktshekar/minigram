@@ -40,7 +40,7 @@ function Login() {
           const userData = await axiosApi.get('/get-user' , {headers : {'Authorization' : localStorage.getItem('token')}})
           if(userData){
             dispatch({type : 'LOGIN' , payload : userData.data})
-            toast.success('Logged in successfully')
+            toast.success('Logged in successfully', { autoClose: 1000 })
             navigate('/dashboard')
             setUserName('')
             setPassword('')
@@ -49,14 +49,12 @@ function Login() {
         }
       }
       catch(error){
-        console.log(error)
-        if(error.status == 401) {
-          toast.error(error.response.data.msg)
+        if(error.response.status == 401) {
+          toast.error(error.response.data.message, { autoClose: 1000 })
         }
-        if(error.status == 500) {
-          toast.error('something went wrong')
-        }
-        toast.error('something went wrong')
+       else {
+           toast.error('something went wrong', { autoClose: 1000 })
+       }
        setUserName('')
        setPassword('')
       }

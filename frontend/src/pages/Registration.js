@@ -63,7 +63,7 @@ function Registration() {
           formData
         );
         if (response) {
-          toast.success('OTP sent successfully')
+          toast.success('OTP sent successfully', { autoClose: 1000 })
           sessionStorage.setItem("email", email);
           navigate("/verify");
           setEmail("");
@@ -75,28 +75,7 @@ function Registration() {
         }
       }  catch (error) {
         console.log(error)
-        if (error.response) {
-          console.error('Server Error Response:', error.response.data);
-          toast.error(error.response.data.msg)
-          console.error('Status:', error.response.status);
-          const { errors } = error.response.data
-          if (errors && Array.isArray(errors)) {
-            errors.forEach((err) => {
-              console.error('Error:', err.msg)
-          toast.error(err.msg)
-            });
-          } else {
-            console.error('Error Message:', error.response.data.message);
-            toast.error(error.response.data.message)
-          }
-        } else if (error.request) {
-          console.error('No Response Received:', error.request);
-          toast.error(error.request)
-
-        } else {
-          console.error('Axios Error:', error.message);
-          toast.error(error.message)
-        }
+        toast.error(error.response.message, { autoClose: 1000 })
       }
         setEmail("");
         setName("");

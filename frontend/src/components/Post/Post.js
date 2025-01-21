@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useReducer, useState } from 'react'
 import PostList from './PostList'
-import axios from 'axios'
 import { PostContext } from '../Dashboard'
 import { axiosApi } from '../../axios'
 

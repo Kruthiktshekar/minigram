@@ -1,1 +1,1 @@
-export const host = 'https://mini-blog-app-api.onrender.com/api'
+export const host = 'http://localhost:3030'
