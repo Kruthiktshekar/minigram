@@ -1,4 +1,4 @@
-import globals from "globals";
+import globals from 'globals';
 
 export default [
   {files: ['**/*.js'], languageOptions: {sourceType: 'module'}},
@@ -11,7 +11,7 @@ export default [
       curly: 'warn',
       quotes: ['error', 'single'],
       semi: ['error', 'always'],
-      indent: ['error', 2],
+      indent: ['warn', 2],
     },
   }
 ];

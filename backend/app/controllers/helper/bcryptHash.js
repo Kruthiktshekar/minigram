@@ -11,6 +11,7 @@ const hashData = async (data) => {
     const hash = await bcrypt.hash(data, salt);
     return hash;
   } catch (error) {
+    console.log('[ERROR] in bcrypt', error);
     throw new Error('Error while hashing data');
   }
 };

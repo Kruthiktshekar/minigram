@@ -11,6 +11,7 @@ const { CHAT } = CONTROLLERS;
  * @param {Object} res - response function of the controller
  * @returns
  */
+
 const addMessge = async (req, res) => {
   try {
     const chatData = await createController(req, res, CHAT);
