@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../contexts/Auth";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import ContentLoader from "react-content-loader";
 import { axiosApi } from "../axios";
 import { host } from "../host";
+import { toast } from "react-toastify";
 
 function Profile() {
   const { loginUser } = useContext(AuthContext);
@@ -28,6 +28,8 @@ function Profile() {
         console.log(error, 'error in getting user posts')
         if(error.response.data = 'jwt expired'){
           navigate('/login')
+        }else{
+          toast.error('something went wrong!', { autoClose: 1000 })
         }
       }
     }

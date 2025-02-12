@@ -1,4 +1,3 @@
-import axios from 'axios'
 import React, { useContext, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AuthContext } from '../contexts/Auth'
@@ -17,16 +16,35 @@ function Login() {
   const navigate = useNavigate()
 
   const runClientSideValidation = () =>{
+    const upperCaseRegex = /[A-Z]/;
+    const lowerCaseRegex = /[a-z]/;
+    const specialCharRegex = /[!@#$%^&*(),.?":{}|<>]/;
+    const digitRegex = /\d/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+
     if(username.trim().length === 0){
       clientSideErrors.name = 'username cannot be empty'
     }else if(password.trim().length === 0){
       clientSideErrors.password = 'Password cannot be empty'
     }else if(password.length>128 || password.length < 4) {
       clientSideErrors.password = 'Password should be greater than 4 digits'
+    }else if (!upperCaseRegex.test(password)) {
+      clientSideErrors.password =
+        "Password should contain atleast 1 uppercase , 1 lowercase, 1 digit and 1 special character";
+    } else if (!lowerCaseRegex.test(password)) {
+      clientSideErrors.password =
+        "Password should contain atleast 1 uppercase , 1 lowercase, 1 digit and 1 special character";
+    } else if (!specialCharRegex.test(password)) {
+      clientSideErrors.password =
+        "Password should contain atleast 1 uppercase , 1 lowercase, 1 digit and 1 special character";
+    } else if (!digitRegex.test(password)) {
+      clientSideErrors.password =
+        "Password should contain atleast 1 uppercase , 1 lowercase, 1 digit and 1 special character";
     }
   }
   const loginHandler = async(e) => {
     e.preventDefault()
+    setLoginClientSideErrors({})
     const formData = {
       username,
       password
@@ -44,7 +62,6 @@ function Login() {
             navigate('/dashboard')
             setUserName('')
             setPassword('')
-            setLoginClientSideErrors({})
           }
         }
       }

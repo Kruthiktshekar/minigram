@@ -66,16 +66,14 @@ function Registration() {
           toast.success('OTP sent successfully', { autoClose: 1000 })
           sessionStorage.setItem("email", email);
           navigate("/verify");
-          setEmail("");
-          setName("");
-          setUserName("");
-          setPassword("");
-        } else {
-          console.log("registration failed", response);
-        }
+          // setEmail("");
+          // setName("");
+          // setUserName("");
+          // setPassword("");
+        } 
       }  catch (error) {
         console.log(error)
-        toast.error(error.response.message, { autoClose: 1000 })
+        toast.error(error.response.data.message, { autoClose: 1000 })
       }
         setEmail("");
         setName("");
