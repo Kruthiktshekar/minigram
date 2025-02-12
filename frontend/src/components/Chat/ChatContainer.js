@@ -8,7 +8,12 @@ function ChatContainer() {
   
   const [currentChat, setCurrentChat] = useState({})
 
-  const socket = io('https://minigram-un5y.onrender.com:10000')
+  const socket = io('https://minigram-un5y.onrender.com', {
+  transports: ['websocket'],
+  reconnection: true,
+  reconnectionAttempts: 5,
+  reconnectionDelay: 2000,
+})
 
   return (
     <div>
