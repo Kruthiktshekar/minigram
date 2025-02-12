@@ -1,7 +1,7 @@
 import { Server } from 'socket.io';
 
 const configScoket = () => {
-  let io = new Server(3232, {
+  let io = new Server(10000, {
     cors: {
       origin: 'https://minigram-1.onrender.com',
     },
