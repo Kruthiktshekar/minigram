@@ -3,7 +3,7 @@ import { Server } from 'socket.io';
 const configScoket = () => {
   let io = new Server(3232, {
     cors: {
-      origin: 'http://localhost:3000',
+      origin: 'https://minigram-1.onrender.com:3000',
     },
     connectionStateRecovery: {},
   });
