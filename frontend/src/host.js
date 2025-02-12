@@ -1,1 +1,1 @@
-export const host = 'http://localhost:3030'
+export const host = 'https://minigram-un5y.onrender.com'
