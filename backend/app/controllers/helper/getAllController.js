@@ -17,9 +17,9 @@ export const getAllController = async (req, res, controllerName) => {
     switch (controllerName) {
       case USER: {
         const id = req.userId;
-        const users = await User.find({ _id: { $ne: id } }).select(
-          '-password -email'
-        );
+        console.log(id);
+        const users = await User.find({ _id: { $ne: id } });
+        console.log(users);
         if (users.length == 0) {
           throw new CustomError(404, USERS_NOT_FOUND);
         }

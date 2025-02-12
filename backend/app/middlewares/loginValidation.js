@@ -62,7 +62,9 @@ export const loginController = async (req, res) => {
 export const verifyOtp = async (req, res) => {
   try {
     const data = req.body;
+    console.log(data);
     const user = await User.findOne({ email: data.email });
+    console.log(user);
     if (!user) {
       throw new CustomError(401, USER_NOT_FOUND);
     }

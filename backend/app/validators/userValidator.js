@@ -90,7 +90,6 @@ export const loginUserSchema = {
       errorMessage: 'username is required',
     },
     trim: true,
-    normalizeEmail: true,
   },
   password: {
     exists: {

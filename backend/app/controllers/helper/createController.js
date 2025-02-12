@@ -71,6 +71,9 @@ export const createController = async (req, res, controllerName) => {
     }
   } catch (error) {
     console.log('[ERROR] error in createController', error);
+    if (error instanceof CustomError) {
+      throw error;
+    }
     throw new Error({ statusCode: 500, message: INTERNAL_SERVER_ERROR });
   }
 };

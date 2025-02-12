@@ -11,6 +11,7 @@ const { INTERNAL_SERVER_ERROR } = USER_ERROR_MESSAGE;
 export function errorCatchBlock(error, res) {
   const code = error?.statusCode ?? 500;
   const message = error?.message ?? INTERNAL_SERVER_ERROR;
+  console.log('[ERROR] Error message in errorCatchBlock', error.message);
   return res.status(code).json({ message });
 }
 
