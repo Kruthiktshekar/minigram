@@ -8,7 +8,7 @@ function ChatContainer() {
   
   const [currentChat, setCurrentChat] = useState({})
 
-  const socket = io(`${host}:3232`)
+  const socket = io('https://minigram-un5y.onrender.com:3232')
 
   return (
     <div>
