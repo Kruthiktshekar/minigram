@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import ChatList from './ChatList'
 import ChatArea from './ChatArea'
 import { io } from 'socket.io-client';
-
+import { host } from '../../host'
 
 function ChatContainer() {
   
   const [currentChat, setCurrentChat] = useState({})
 
-  const socket = io('http://localhost:3232')
+  const socket = io(`${host}:3232`)
 
   return (
     <div>
