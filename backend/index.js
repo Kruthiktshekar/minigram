@@ -14,7 +14,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const port = 3030;
+const port = 3030 || 10000;
 app.use(cors({ origin: "https://minigram-1.onrender.com", credentials: true }));
 app.options('*', cors());
 app.use(express.json());
@@ -25,6 +25,6 @@ ConfigDb();
 
 configScoket();
 
-app.listen(port || 10000, () => {
+app.listen(port, () => {
   console.log(`server started at ${port}`);
 });
