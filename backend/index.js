@@ -25,6 +25,6 @@ ConfigDb();
 
 configScoket();
 
-app.listen(port, () => {
+app.listen(port || 10000, () => {
   console.log(`server started at ${port}`);
 });
